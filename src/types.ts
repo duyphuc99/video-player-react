@@ -5,7 +5,7 @@ export interface File {
   ext: string;
   name: string;
   relative: string;
-  type: string;
+  type: "folder" | "file";
   title: string;
 }
 

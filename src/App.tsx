@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FileList from "./components/FileList";
 import { AppContextType, Directory } from "./types";
-
+import { BrowserRouter } from "react-router-dom";
 export const AppContext = React.createContext<AppContextType>(
   {} as AppContextType
 );
@@ -10,12 +10,14 @@ export const AppContext = React.createContext<AppContextType>(
 function App() {
   const [directory, setDirectory] = useState<Directory | null>(null);
   return (
-    <AppContext.Provider value={{ directory, setDirectory }}>
-      <AppWrapper>
-        <VideoPlayWrapper> </VideoPlayWrapper>
-        <FileList />
-      </AppWrapper>
-    </AppContext.Provider>
+    <BrowserRouter>
+      <AppContext.Provider value={{ directory, setDirectory }}>
+        <AppWrapper>
+          <VideoPlayWrapper></VideoPlayWrapper>
+          <FileList />
+        </AppWrapper>
+      </AppContext.Provider>
+    </BrowserRouter>
   );
 }
 
