@@ -21,6 +21,10 @@ export interface Directory {
 }
 
 export interface AppContextType {
+  videoServer: string;
   directory: Directory | null;
   setDirectory: (directory: Directory) => void;
+  urlPlayer: string;
+  subUrlPlayer?: string;
+  setPlayerUrl: (url: string, subUrl?: string) => void;
 }
